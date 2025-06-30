@@ -1,0 +1,12 @@
+.SearchBox{
+      width:50vw;
+     border: 2px solid black;
+     border-radius:20px;
+     text-align: center;
+      height: 180px;
+      /* margin-bottom: 20px; */
+      margin: 25px auto;
+}
+.error{
+      margin: 1rem;
+}

@@ -1,0 +1,60 @@
+show collections
+db.student.insertOne({name:"adam",marks:79})
+db.student.find()
+
+camel case me texting ho rahi hai 
+
+every collection is stored in form of array
+an document is in form of object 
+
+
+db.student.insertOne({name:"bob",marks:80,city:mumbai})
+
+
+updateMany
+db.student.updateMany({city:"delhi"},{$set:{city:"new delhi"}})
+
+
+replaceOne 
+db.student.replaceOne({name:"bob"},{name:"aditya", marks:94,state:"harry"}) 
+
+
+forming nesting
+db.student.insert({name:"farah",performance:{marks:88,grades:"A"}})
+
+searching of same type of student 
+db.student.findOne({"performance.marks":88})
+
+
+deleteOne
+db.student.deleteOne(<filter>,<options>)
+db.student.deleteOne({state:"haryana"})
+
+deleteMany
+db.collection.deleteMany(<filter>,<options>)
+db.student.deleteMany({marks:{$lt:75}})
+db.student.deleteMany({}) // delete all document // empty
+
+
+to delete whole database
+college> db.dropDatabase() 
+
+
+
+
+to show all database 
+db.database.find()  
+
+
+
+// ------------------------------------
+
+to delete whole database
+college> db.dropDatabase() 
+
+show dbs 
+college> // temporary database 
+college> db.student.insertOne({name:"aditya",marks:99})
+
+
+

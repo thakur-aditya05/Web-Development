@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title> -->
+
+    <!-- actually likhna to yahi tha but ejs-public pair use kr rahe hai to stylesheet  ke public folder me hi automatic search kiya jayga   -->
+    <!-- <link rel="stylesheet" href="/public(3.2)/style.css"> --> 
+
+     <!--tabhi to yahi likha ja skta hai to kaam chl jayega   -->
+    <!-- <link rel="stylesheet" href="/style.css">
+
+</head> -->
+
+
+
+<!-- sub tempalte ek chota section include kr rahe  hai  kaha se "views" ke under "include" folder se "head.ejs" file -->
+<%-include("includes/head.ejs")%>
+
+
+
+
+<body>
+    <h2>this page belong to <%=data.name%></h2>
+    <button>follow</button>
+    <button>Meassage</button>
+
+    <p>
+        followers: <%=data.followers%>&nbsp;&nbsp;&nbsp;&nbsp;
+        Following: <%=data.following %> 
+    </p>
+
+    <hr>
+    <hr>
+
+    <% for(let post of data.posts) { %>
+        <img src="<%=post.image%>" alt="some img">
+        <p>
+                likes: <%=post.likes%>&nbsp;&nbsp;&nbsp;&nbsp;
+                comments: <%=post.comments%>&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+    <% }%>
+
+
+    <%-include("includes/footer.ejs")%>
+        
+
+</body>
+
+
+
+<script src="/js.js" ></script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+</head>
+<body>
+    <body>
+    <h3>All Listings</h3>
+    <form method="get" actions="/listings/new">
+            <button>Create New Listings </button>
+    </form>
+    <ul>
+    <% for(let listing of allListings) { %>
+        <li>
+            <!-- hrr ek link pe click krne pr ek request jayegi show route jispe individual deatil dikhayi dengi  -->
+            <!-- get request /listings/:id  pe show route for specific deatils -->
+        <a href="/listings/<%= listing._id %>">
+            <%= listing.title %>
+        </a>
+        </li>
+    <% } %>
+    </ul>
+</body>
+
+    
+</body>
+</html>

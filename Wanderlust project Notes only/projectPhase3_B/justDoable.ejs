@@ -1,0 +1,111 @@
+<% layout ( "/layouts/boilerplate" )-%>
+<script>
+    // shoow ejs se script chalane wale hai jisse environmmental variable ko save kara lenge 
+    const mapToken="<%= process.env.MAP_TOKEN %>"; // js variable 
+    // const listing = <%-JSON.stringify(listing) %>;  // js varible 
+    const coordinates = <%-JSON.stringify(listing.geometry.coordinates)%>;
+    const locations = <%-JSON.stringify(listing.location)%>;
+</script>
+    <!-- <body> -->
+        <!-- whole body in one row  -->
+<div class="row mt-3">
+    <!-- head is in one row of that particular 1 row  -->
+
+    <div class="col-8 offset-3">
+        <H3><%=listing.title%></H3>
+    </div>
+
+    <!-- rest of the part is in 2nd row of main div -->
+
+        <div class="card col-6 offset-3 show-card listing-card">
+            <!-- <img src="<%=listing.image%>" class="card-img-top show-img" alt="listings_image"> -->
+            <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="listings_image">
+            <div class="card-body">
+                <p class="card-text">
+
+                   <!-- <b> <%=listing.title%> </b><br> -->
+                    Owned by&nbsp;&nbsp; <i><%=listing.owner.username%> </i><br>
+                   <%=listing.description%> <br>
+                   <p><b> price : </b>  &nbsp;&nbsp; &#8377; <%= listing.price%> </p> 
+                    <p><b> location :</b> <%=listing.location%></p>
+                    <p><b> country : </b> <%=listing.country%> </p>
+
+                </p>
+            </div>
+        </div>
+        <%if(currUser &&  currUser._id.equals(listing.owner._id)){%>
+        <div class="btns">
+            <!-- edit -->
+            <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark offset-3 edit-Btn" > Edit </a><br><br>
+            <!-- <form method="get" action="http://localhost:8080/listings/<%=listing._id%>/edit">
+                <button class="btn btn-dark offset-3 edit-Btn"  >Edit </button>
+            </form> -->
+        
+         <!-- dlete -->
+            <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+                <button class="btn btn-dark   offset-5  " >Delete </button>
+            </form>
+        </div>
+    <%}%>
+    &nbsp;
+   
+   
+    <div class="col-8 offset-3 mb-3">
+       
+        <%if(currUser){%>
+            <hr>
+        <h4>Leave a Review </h4>
+        <form action="/listings/<%=listing._id%>/reviews" method="POST" class="needs-validation" novalidate>
+         
+
+            <div class="mb-3 mt-3">
+                <label for="comment" class="form-label">Comments</label>
+                <textarea  class="form-control" name="review[comment]" id="comment" cols="90" required></textarea>
+                <div class="valid-feedback">comment Looks good!</div>
+                <div class="invalid-feedback">add valid comment.</div>
+                
+            </div>
+            <button class="btn btn-outline-dark">Submit</button>
+        </form>
+        <hr>
+        <%}%>
+    </div>
+    <div class="col-8 offset-3 mb-3">
+    <%if(listing.reviews.length>0){%>  <!-- agar hamre reviews listing  ke under exists krte hai to tabhi hmm   <p><b>All Reviews</b></p> ko dikhayenge nahi to nahi -->
+        <div class="row">
+            <!-- <p><%=listing.reviews%></p> -->
+            <p><b>All Reviews</b></p>
+            <%for(review of listing.reviews){%>
+                <div class="card col-5 mb-3 ms-3">
+                    <div class="card-body">
+                        <div class="card-title"><%=review.author.username%></div>
+                        <p class="starability-result card-text" data-rating="<%=review.rating%>"></p> <!--this para is for static rating by users jisko baar baar changes nahi kr skte -->
+                        
+                        <div class="card-text"><%=review.comment%></div>
+    
+                        <!-- <div class="card-text"><%=review.rating%>&#11088;</div> -->
+                        <!-- <p class="starability-result" data-rating="<%=review.rating%>">&nbsp;</p> -->
+                        <form method="POST" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" class="my-2">
+                            <button class="btn btn-dark">Delete</button>
+                        </form>
+    
+                    </div>
+                </div>
+             <%}%>
+        </div>
+       <%}%> 
+    </div>
+     </div>
+
+      <!-- for map diagram -->
+    <div class="col-8 offset-3 mb-3">
+       <h3>Where you'll be</h3>
+       <div id="map"></div>
+    </div>
+
+</div>
+
+
+
+<!-- .ejs alag file me issko access karega and basic map render ho jaeyga -->
+   <script src="/js/map.js"> </script>     <!--  taki js ke under jake map.js ki file yaha pr run krwa do lake  (ejs me script ko access kr rahe hai )-->

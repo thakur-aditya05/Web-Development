@@ -1,0 +1,183 @@
+/* .................................................................................................................... */
+/* thsese were added wrt to new.ejs maiting  */
+body{ 
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh;
+}
+/* conainer class me bhi changes jo bhi changes krne ade to getfooter stiky at bottom  */
+.container{
+    flex:1;  
+    /* container class ke ab full height lega orr bacchi kuchi jagah footer lega jahe jitnni bacche ho */
+}
+/* .................................................................................................................... */
+
+
+/* .................................................................................................................... */
+/* NAvebar */
+.navbar{
+    height:5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color: #fe242d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+/* .................................................................................................................... */
+
+
+
+/* .................................................................................................................... */
+/* footer style  */
+.f-info-links a {
+         text-decoration:none;
+         color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+
+}
+.f-info-links , .f-info-socials , .f-info-brand  {
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+ 
+.f-info-socials i {
+    font-size:1.5rem;
+    margin-right: 0.8rem ;
+    /* margin-right:2rem; */
+
+}
+.f-info {  
+   text-align:center;
+   height: 8rem;
+   background-color: #ebebeb;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items:space-evenly;
+
+}
+/*  */
+/* .................................................................................................................... */
+/* cards ke liye styling define kr rahe hai */
+/* styling cards */
+.listing-card {
+    border:none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius:1rem !important ;
+        width: 100% !important;
+        object-fit: cover !important;   /* new property */
+        
+    }
+    .card-body{
+        padding: 0 !important;
+    }
+    .card-text p {
+        font-weight: 400;
+        
+    }
+    .listing-link {
+        text-decoration: none ;
+    }
+    /* font paste karo whole body ke liye  */
+    /* body{ font-family: "Plus Jakarta Sans", sans-serif !important; }    se at the top  */
+    
+    /* overlay effect  */
+    /* important  */
+    /* initial behaviour  */
+    .card-img-overlay {
+        opacity:0;
+    }
+    
+    /* final behaviour  */
+    .card-img-overlay:hover{
+        opacity:0.1;
+        background-color:white;
+    }
+
+/* add these two lines at the top  */
+/* .................................................................................................................... */
+
+
+
+
+
+
+/* .................................................................................................................... */
+/* new page  */
+.add-btn {
+    background-color: #fe242d !important;
+    border:none !important;
+}
+/* .................................................................................................................... */
+
+
+
+/* .................................................................................................................... */
+/* edit page */
+.edit-Btn {
+    background-color: #fe242d !important;
+    border:none !important;
+    padding: 0.5rem 0.8rem 0.1rem 0.8rem !important ;
+}
+/* .................................................................................................................... */
+
+
+
+
+
+
+/* .................................................................................................................... */
+/* edit page */
+/* show page */
+.show-img{
+    height:30vh;
+
+}
+.btns {
+      display:flex;
+}
+
+.show-card{
+    padding-left:0;
+    padding-right:0;
+}
+
+/* .................................................................................................................... */
+
+
+
+
+
+
+
+
+
+
+/* #map { position: absolute; top: 0; bottom: 0; width: 100%; } styling for whole page but we want for small box */
+#map { 
+    height: 400px;
+     width: 90vh; 
+    } 
+
+ 
+
+
+
+
+
+
+
+

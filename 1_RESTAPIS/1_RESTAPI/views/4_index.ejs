@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All  posts</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <% for(post of posts) {%>
+        <div class="post">
+            <h3 class="user">@<% =post.username %></h3>
+            <h4 class="content"><%=post.content %></h4>
+            <!-- hrr post ke leiye buuton add ho jaye taki deatils me dekh sake hr post ko individully  -->
+                <a href="http://localhost:8080/posts/<%=post.id%>">see  in deatils </a>
+                
+            <!-- hrr post ke leiye buuton add ho jaye taki edit de  sake hr post ko individully  -->
+                <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit </a>
+        
+            <!-- giving the button  -->
+             <form action="/posts/<%=post.id%>?_method=DELETE" methos="post">
+                <button>Delete post </button>
+             </form>
+              
+        </div>
+    <% } %>
+
+        <!-- ye new button add krne ke liye hai ki new button add kiya ja sake  -->
+        <br><br><br>
+        <a href="http://localhost:8080/posts/new">Create new post</a>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+PS C:\Users\thaku\OneDrive\Desktop> sudu brew services start mongodb-comunity@7.0
+
+PS C:\Users\thaku\OneDrive\Desktop> mongosh //mongo shell creation 
+ctrl+c, ctrl+k , help 
+
+test> show dbs
+type of js shell  , moongodb internally javvascript command ko recognise krta hai 
+(like 1+2, "apaancollege".toUpperCase, )
+
+
+> test==>temp database ka naam hai test 
+
+use college // if not exists then it will make , but it will be temporary and will still not saved 
+it eill be saved when we saved any form of data 
+show dbs // no saved college 
+
+db // show current database
+
+https://www.mongodb.com/resources/basics/json-and-bson // json and bson formatting defeerance 
+json(data we feed in mongodb ) --->bson(data stored in mongodb)
+
+
+1 document ==>(1 individual data ) 1 rows [json format--->later on converted on  -->BSON ]
+1_collection ==> 1_tables 
+
+
+--------------------------------------------
+https://www.mongodb.com/docs/manual/crud/ 
+
+lets start command on mongo shell 
+show collections
+db

@@ -1,0 +1,29 @@
+apis are not too much accurate in nature 
+weather api me se ek api to use weather api 
+                  https://openweathermap.org/current
+                  sign in is important beacause 
+                  https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}   is calling api
+
+
+Direct geocoding
+Direct geocoding allows to get geographical coordinates (lat, lon) by using name of the location (city name or area name).
+ If you use the limit parameter in the API call, you can cap how many locations with the same name will be seen in the API
+response (for instance, London in the UK and London in the US)   
+
+                https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+
+
+
+
+
+
+https://unsplash.com/           used for image sysytem 
+
+
+at veryy last we have homework to show  material icons https://mui.com/material-ui/material-icons/  hoturl cold url   
+https://mui.com/material-ui/material-icons/     url 
+
+https://legacy.reactjs.org/docs/getting-started.html  react official docs initailly used 
+
+                
